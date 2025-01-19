@@ -7,9 +7,9 @@ from ..utils.ecp5pll import ECP5PLL, ECP5PLLConfig
 class PllTimer(Elaboratable):
     def elaborate(self, platform: Platform):
         led1 = platform.request("led", 0)
-        led4 = platform.request("led", 3)
+        # led4 = platform.request("led", 3)
 
-        timer1 = Signal(25)
+        timer1 = Signal(22)
         fifo_buf = Signal(16)
 
         m = Module()
@@ -44,6 +44,6 @@ class PllTimer(Elaboratable):
 
         # Combinatorial logic
         m.d.comb += led1.o.eq(timer1[-1])
-        m.d.comb += led4.o.eq(fifo_buf[-1])
+        # m.d.comb += led4.o.eq(fifo_buf[-1])
 
         return m
