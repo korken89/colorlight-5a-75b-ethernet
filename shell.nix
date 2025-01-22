@@ -18,4 +18,8 @@ pkgs.mkShell {
     gtkwave
     icestorm
   ];
+
+  shellHook = ''
+    exec fish
+  '';
 }
