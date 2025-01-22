@@ -18,8 +18,9 @@ class Colorlight_5A75B_R82Platform(LatticeECP5Platform):
     resources = [
         Resource("clk25", 0, Pins("P6", dir="i"), Clock(25e6), Attrs(IO_TYPE="LVCMOS33")),
 
-        *LEDResources(pins="T6", invert = True,
-                      attrs=Attrs(IO_TYPE="LVCMOS33", DRIVE="4")),
+        Resource("led", 0, Pins("T6", dir="o"), Attrs(IO_TYPE="LVCMOS33")),
+        # *LEDResources(pins="T6", invert = True,
+        #               attrs=Attrs(IO_TYPE="LVCMOS33", DRIVE="4")),
 
         *ButtonResources(pins="R7", invert = True,
                          attrs=Attrs(IO_TYPE="LVCMOS33", PULLMODE="UP")),

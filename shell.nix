@@ -8,6 +8,7 @@ pkgs.mkShell {
         amaranth
         amaranth-boards
         amaranth-soc
+        python-lsp-server
       ]
     ))
     openfpgaloader

@@ -28,7 +28,7 @@ class PllTimer(Elaboratable):
         # Delay
         m.submodules.delay = Instance("DELAYG",
                     p_DEL_MODE  = "SCLK_ALIGNED",
-                    p_DEL_VALUE = 0,
+                    p_DEL_VALUE = 200,
                     i_A         = led_sig,
                     o_Z         = led1.o,
                 )
